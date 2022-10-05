@@ -1,4 +1,4 @@
-# __C-Leetcode__
+# __C++ -Leetcode__
 ---
 ### Day 1
 ##### 1.学习使用git
