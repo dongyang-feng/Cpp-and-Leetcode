@@ -1,2 +1,5 @@
-# C-Leetcode
-C++、Leetcode学习笔记
+# __C-Leetcode__
+##C++、Leetcode学习笔记
+* 今天开始学习GitHub的使用
+* 每天都要刷一道题
+* 学习C++的基础语法和后面的STL
