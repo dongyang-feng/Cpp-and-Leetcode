@@ -1,6 +1,5 @@
 # __C++ - Leetcode__
----
-## Day 1
+## Day 1 10-5
 ### 1.学习使用git
 * 首先创建一个空的文件夹用于存放将要下载的项目
 * 找到目标项目在GitHub中存放的地址，__复制__
@@ -18,11 +17,13 @@
   * 去掉运行时间中的加法常数项 
   * 去掉常数系数
   * 只保留最高项
----
-## Day 2
-暂时的想法使用使用transformer模型，针对每一个输入变量，具体指历史功率数据、天气变量等分贝使用transformer进行特征提取，只使用encoder部分，然后将得到的信息融合进行预测
-参考论文：
-另一方面就是看看基于天空图像的论文，这个肯定要参考辐照度预测的文章
+## Day 2 10-6
+* 暂时的想法使用使用transformer模型，针对每一个输入变量，具体指历史功率数据、天气变量等分别使用transformer进行特征提取，只使用encoder部分，然后将得到的信息融合使用全连接层进行预测
+* 另一方面就是看看基于天空图像的论文，这个肯定要参考辐照度预测的文章
+## Day 3 10-7
+* 学习了 __TFT（Temporal Fusion Transformers）__ 模型，来自论文[Temporal Fusion Transformers for interpretable multi-horiizon times series forecasting](https://www.sciencedirect.com/science/article/pii/S0169207021000637).TFT是transformer的一种变体，其消融实验中有发现针对光伏功率这样的周期性数据看，整个TFT架构中发挥较大作用的模块是 __self-attention部分__ 启示可以考虑其他类似的transformer变体。在22年论文[Application of Temporal Fusion Transformer for Day-Ahead PV Power Forecasting](https://www.mdpi.com/1996-1073/15/14/5232)中使用TFT进行提前一天的光伏功率预测，还没有看到与数据融合和算法优化同时应用TFT模型， 不过在风速预测中有一篇22年发表于Energy的文章[Interpretable wind speed prediction with multivariate time series and temporal fusion transformers](https://www.sciencedirect.com/science/article/abs/pii/S0360544222008933)可以作为参考。
+
+
 
 
 
