@@ -23,7 +23,7 @@
 ## Day 3 10-7
 * 学习了 **TFT（Temporal Fusion Transformers）** 模型，来自论文 **[Temporal Fusion Transformers for interpretable multi-horiizon times series forecasting](https://www.sciencedirect.com/science/article/pii/S0169207021000637)**。TFT是transformer的一种变体，论文中的消融实验发现，针对如光伏功率这样的周期性较强的数据，整个TFT架构中发挥较大作用的模块是**self-attention部分**，启示可以考虑其他类似的transformer变体。在22年论文 **[Application of Temporal Fusion Transformer for Day-Ahead PV Power Forecasting](https://www.mdpi.com/1996-1073/15/14/5232)** 中使用TFT进行提前一天的光伏功率预测，还没有看到与数据融合和算法优化同时应用TFT模型， 不过在风速预测中有一篇22年发表于Energy的文章 **[Interpretable wind speed prediction with multivariate time series and temporal fusion transformers](https://www.sciencedirect.com/science/article/abs/pii/S0360544222008933)** 有了类似的思路进行VMD+ADE+TFT的融合模型，可以作为参考。
 * **[Temporal Fusion Transformers for interpretable multi-horiizon times series forecasting](https://www.sciencedirect.com/science/article/pii/S0169207021000637)** 考虑了多种变量，包括静态协变量、外部数据（其他输入变量的历史相关信息）、以及未来分布已知的输入，整个的模型架构如下图所示：
-！[TFT architecture](https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg)
+[TFT architecture](https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg)
 
 
 
