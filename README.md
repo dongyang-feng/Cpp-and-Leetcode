@@ -27,6 +27,7 @@
 <div align="center">
 	<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg" width="60%">
 </div><br>
+后续补全该篇文章的阅读心得<br>
 
 
 
