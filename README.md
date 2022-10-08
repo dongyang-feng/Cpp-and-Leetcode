@@ -27,14 +27,13 @@
 <div align="center">
 	<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg" width="60%">
 </div><br>
-后续补全该篇文章的阅读心得<br>
+后续补全该篇文章的阅读心得
+
 ## Day 10-8
 **[Application of Temporal Fusion Transformer for Day-Ahead PV Power Forecasting](https://www.mdpi.com/1996-1073/15/14/5232)**（Energies）<br>
 * Main idea:首次使用TFT作为预测模型实现提前一天光伏功率的每小时预测<br>
 **输入**
-<div align="center">
-	<img src="C:\Users\a\Pictures\Saved Pictures\Energies-22-TFT-inputs" width="60%">
-</div><br>
+
 	
 
 
