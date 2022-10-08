@@ -36,7 +36,9 @@
 <div align="center">
 	<img src="https://github.com/dongyang-feng/C-Leetcode/blob/main/Energies-22-TFT-inputs.jpg" width="60%">
 </div><br>
-* 本篇文章是直接使用了TFT模型，没有其他的一些数据分解方法，这里出现的意义仅在于首次使用TFT进行光伏功率的预测作为一个记录。后续可以考虑实现区间预测，以及加入数据分解的方法
+* 本篇文章是直接使用了TFT模型，没有其他的一些数据分解方法，这里出现的意义仅在于首次使用TFT进行光伏功率的预测作为一个记录。后续可以考虑实现区间预测，以及加入数据分解的方法<br>
+<br>
+**[Interpretable wind speed prediction with multivariate time series and temporal fusion transformers](https://www.sciencedirect.com/science/article/abs/pii/S0360544222008933)**
 
 
 
