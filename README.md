@@ -34,7 +34,7 @@
 * **Main idea**:首次使用TFT作为预测模型实现提前一天光伏功率的每小时预测<br>
 **输入**
 <div align="center">
-	<img src="" width="60%">
+	<img src="https://github.com/dongyang-feng/C-Leetcode/blob/main/Energies-22-TFT-inputs.jpg" width="60%">
 </div><br>
 	
 
