@@ -30,7 +30,7 @@
 后续补全该篇文章的阅读心得
 
 ## Day 10-8
-**[Application of Temporal Fusion Transformer for Day-Ahead PV Power Forecasting](https://www.mdpi.com/1996-1073/15/14/5232)**（Energies）<br>
+**[Application of Temporal Fusion Transformer for Day-Ahead PV Power Forecasting](https://www.mdpi.com/1996-1073/15/14/5232)**(Energies)<br>
 * **Main idea**:首次使用TFT作为预测模型实现提前一天光伏功率的每小时点预测<br>
 **输入变量：** 如下表所示
 <div align="center">
@@ -39,7 +39,9 @@
 * 本篇文章是直接使用了TFT模型，没有其他的一些数据分解方法，这里出现的意义仅在于首次使用TFT进行光伏功率的预测作为一个记录。后续可以考虑实现区间预测，以及加入数据分解的方法<br>
 <br>
 
-**[Interpretable wind speed prediction with multivariate time series and temporal fusion transformers](https://www.sciencedirect.com/science/article/abs/pii/S0360544222008933)**
+**[Interpretable wind speed prediction with multivariate time series and temporal fusion transformers](https://www.sciencedirect.com/science/article/abs/pii/S0360544222008933)** (Energy)<br>
+* 这篇文章的实验细节等交代的都很清楚，可以仔细的研究参考。
+
 
 
 
