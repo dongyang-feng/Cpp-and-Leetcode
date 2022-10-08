@@ -33,7 +33,9 @@
 **[Application of Temporal Fusion Transformer for Day-Ahead PV Power Forecasting](https://www.mdpi.com/1996-1073/15/14/5232)**（Energies）<br>
 * **Main idea**:首次使用TFT作为预测模型实现提前一天光伏功率的每小时预测<br>
 **输入**
-
+<div align="center">
+	<img src="" width="60%">
+</div><br>
 	
 
 
