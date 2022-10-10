@@ -61,10 +61,14 @@
   * 使用Seq2Seq进行局部增强：编码器和解码器使用的都是LSTM，编码器的隐状态和cell state使用静态协变量编码器的两个输出值进行初始化，另外编码器每个时间步的输入是t时刻之前的特征向量，解码器使用的是t时刻之后的特征向量，LSTM处理得到的结果还需要使用GLU和残差处理，具体形式如下式所示：<br>
   ![Seq2Seq](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-48-22.png)<br>
   * 静态增强层（Static enrichment layer）： 对Seq2Seq进行局部增强得到的向量在使用GRN网络进行静态增强，这里GRN的参数在所有时间步上是共享的<br>
-  ![SEL]()<br>
+  ![SEL](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-48-38.png)<br>
   * 可解释的多头注意力机制（Interpretable multi-head attention）：对多头注意力机制进行了修改，如下列公式所示：<br>
   ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-38-43.png)<br>
   ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-38-52.png)<br>
+  * 时间自注意力层（Temporal self-attention layer）：使用上面介绍的可解释多头注意力机制，输入将上一层静态增强层的所有时间步的结果组成一个矩阵（K+t+1*d）
+  * 位置前馈层（Position-wise feed-forward layer）：该层到最后的输出结果之间多次使用了GRN网络、GLU和残差连接。
++ 损失函数：（loss function）
+![]()<br>
   
   
   
