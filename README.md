@@ -53,7 +53,9 @@
 	<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg" width="60%">
 </div><br>
   * 门控机制（Gating mechanisms）：文章中使用最多的网络结构，可以让模型动态的跳过某些对预测结果无用的结构，让模型可以更复杂
-
+<div align="center">
+	<img src="" width="60%">
+</div><br>
 
 
 
