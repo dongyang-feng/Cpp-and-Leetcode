@@ -26,7 +26,7 @@
   ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-38-52.png)<br>
   * 时间自注意力层（Temporal self-attention layer）：使用上面介绍的可解释多头注意力机制，输入将上一层静态增强层的所有时间步的结果组成一个矩阵（K+t+1*d）
   * 位置前馈层（Position-wise feed-forward layer）：该层到最后的输出结果之间多次使用了GRN网络、GLU和残差连接。
-+ 损失函数：（loss function）
++ 损失函数：（loss function）<br>
 ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_22-07-42.png)<br>
 
 ## Day 10-8
