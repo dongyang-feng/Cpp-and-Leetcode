@@ -11,22 +11,22 @@
   * 相较于传统的transformer模型具有较好的可解释性，可以量化的显示出各个变量对于某个时间步预测结果的重要程度；
   * 将输入变量划分为三类：1）仅有历史数据的变量（eg:气象因素等） 2）未来已知的变量（eg: 年月日等时间变量） 3）静态协变量（不变的值，文章很重视该变量的作用）；
   * 损失函数：使用联合分位数损失，相应可以在每个时间步得到不同分位数的预测值，后续会进一步介绍。
-+ 模型结构
-  * 门控机制（Gating mechanisms）： **GRN** 文章中使用最多的网络结构，可以让模型仅在需要的时候对输入进行非线性处理，让模型可以更复杂以应对更复杂的模型，中间关键的是使用GLU作为激活函数，达到非线性处理目的<br>
++ **模型结构**
+  * **门控机制（Gating mechanisms）**： **GRN** 文章中使用最多的网络结构，可以让模型仅在需要的时候对输入进行非线性处理，让模型可以更复杂以应对更复杂的模型，中间关键的是使用GLU作为激活函数，达到非线性处理目的<br>
   ![GRN](https://github.com/dongyang-feng/C-Leetcode/blob/main/Gating%20mechanisms.png)<br>
-  * 变量选择网络（Variables election networks）:模型对所有三种输入都使用了变量选择网络，作用首先可以关注到对预测结果重要的变量，其次能移除掉输入中的不必要的输入。变量选择网络的输入是各个变量，针对离散变量使用 **Entity embeddings** 的方法得到其特征表示，对于连续变量使用**线性变换**得到一个d维的向量。每种变量有一个GRN网络，并且在所有时间步上共享参数，进行特征选择的使用使用到权重的概念，跟注意力机制有些相似，但是不完全相同。特征选择执行过后，每个时间步得到一个特征向量。<br>
+  * **变量选择网络（Variables election networks）**:模型对所有三种输入都使用了变量选择网络，作用首先可以关注到对预测结果重要的变量，其次能移除掉输入中的不必要的输入。变量选择网络的输入是各个变量，针对离散变量使用 **Entity embeddings** 的方法得到其特征表示，对于连续变量使用**线性变换**得到一个d维的向量。每种变量有一个GRN网络，并且在所有时间步上共享参数，进行特征选择的使用使用到权重的概念，跟注意力机制有些相似，但是不完全相同。特征选择执行过后，每个时间步得到一个特征向量。<br>
   ![VSN](https://github.com/dongyang-feng/C-Leetcode/blob/main/VSN.png)<br>
-  * 静态协变量编码器（Static covariate encoders）:使用四个GRN网络，以静态协变量作为输入得到四个不同的嵌入向量，分别在不同的地方用到
-  * 使用Seq2Seq进行局部增强：编码器和解码器使用的都是LSTM，编码器的隐状态和cell state使用静态协变量编码器的两个输出值进行初始化，另外编码器每个时间步的输入是t时刻之前的特征向量，解码器使用的是t时刻之后的特征向量，LSTM处理得到的结果还需要使用GLU和残差处理，具体形式如下式所示：<br>
+  * **静态协变量编码器（Static covariate encoders）**:使用四个GRN网络，以静态协变量作为输入得到四个不同的嵌入向量，分别在不同的地方用到
+  * **使用Seq2Seq进行局部增强**：编码器和解码器使用的都是LSTM，编码器的隐状态和cell state使用静态协变量编码器的两个输出值进行初始化，另外编码器每个时间步的输入是t时刻之前的特征向量，解码器使用的是t时刻之后的特征向量，LSTM处理得到的结果还需要使用GLU和残差处理，具体形式如下式所示：<br>
   ![Seq2Seq](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-48-22.png)<br>
-  * 静态增强层（Static enrichment layer）： 对Seq2Seq进行局部增强得到的向量在使用GRN网络进行静态增强，这里GRN的参数在所有时间步上是共享的<br>
+  * **静态增强层（Static enrichment layer）**： 对Seq2Seq进行局部增强得到的向量在使用GRN网络进行静态增强，这里GRN的参数在所有时间步上是共享的<br>
   ![SEL](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-48-38.png)<br>
-  * 可解释的多头注意力机制（Interpretable multi-head attention）：对多头注意力机制进行了修改，如下列公式所示：<br>
+  * **可解释的多头注意力机制（Interpretable multi-head attention）**：对多头注意力机制进行了修改，如下列公式所示：<br>
   ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-38-43.png)<br>
   ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_21-38-52.png)<br>
-  * 时间自注意力层（Temporal self-attention layer）：使用上面介绍的可解释多头注意力机制，输入将上一层静态增强层的所有时间步的结果组成一个矩阵（K+t+1*d）
-  * 位置前馈层（Position-wise feed-forward layer）：该层到最后的输出结果之间多次使用了GRN网络、GLU和残差连接。
-+ 损失函数：（loss function）<br>
+  * **时间自注意力层（Temporal self-attention layer）**：使用上面介绍的可解释多头注意力机制，输入将上一层静态增强层的所有时间步的结果组成一个矩阵（K+t+1*d）
+  * **位置前馈层（Position-wise feed-forward layer）**：该层到最后的输出结果之间多次使用了GRN网络、GLU和残差连接。
++ **损失函数**：（loss function）<br>
 ![](https://github.com/dongyang-feng/C-Leetcode/blob/main/Snipaste_2022-10-10_22-07-42.png)<br>
 
 ## Day 10-8
