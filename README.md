@@ -46,9 +46,13 @@
 **[Temporal Fusion Transformers for interpretable multi-horiizon times series forecasting](https://www.sciencedirect.com/science/article/pii/S0169207021000637)**<br>
 + 这篇文章提出的 **Temporal Fusion Transformer** 模型主要应用于多步时间序列预测问题
   * 相较于传统的transformer模型具有较好的可解释性，可以量化的显示出各个变量对于某个时间步预测结果的重要程度；
-  * 将输入变量划分为三类：1）仅有历史数据的变量（eg:气象因素等） 2）未来已知的变量（eg: 年月日等时间变量） 3）静态协变量（不变的值，文章很重视该变量的作用）
-  * 损失函数：使用联合分位数损失，后续会进一步介绍
+  * 将输入变量划分为三类：1）仅有历史数据的变量（eg:气象因素等） 2）未来已知的变量（eg: 年月日等时间变量） 3）静态协变量（不变的值，文章很重视该变量的作用）；
+  * 损失函数：使用联合分位数损失，相应可以在每个时间步得到不同分位数的预测值，后续会进一步介绍。
 + 模型结构
+<div align="center">
+	<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg" width="60%">
+</div><br>
+  * 门控机制（Gating mechanisms）：文章中使用最多的网络结构，可以让模型动态的跳过某些对预测结果无用的结构，让模型可以更复杂
 
 
 
