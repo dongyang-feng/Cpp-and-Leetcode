@@ -55,8 +55,7 @@
 + 模型结构
   * 门控机制（Gating mechanisms）： **GRN** 文章中使用最多的网络结构，可以让模型动态的跳过某些对预测结果无用的结构，让模型可以更复杂以应对更复杂的模型<br>
   ![GRN](https://github.com/dongyang-feng/C-Leetcode/blob/main/Gating%20mechanisms.png)<br>
-  
-  * 
+  * 变量选择网络
 
 
 
