@@ -53,9 +53,9 @@
   * 将输入变量划分为三类：1）仅有历史数据的变量（eg:气象因素等） 2）未来已知的变量（eg: 年月日等时间变量） 3）静态协变量（不变的值，文章很重视该变量的作用）；
   * 损失函数：使用联合分位数损失，相应可以在每个时间步得到不同分位数的预测值，后续会进一步介绍。
 + 模型结构
-  * 门控机制（Gating mechanisms）： **GRN** 文章中使用最多的网络结构，可以让模型动态的跳过某些对预测结果无用的结构，让模型可以更复杂以应对更复杂的模型
+  * 门控机制（Gating mechanisms）： **GRN** 文章中使用最多的网络结构，可以让模型动态的跳过某些对预测结果无用的结构，让模型可以更复杂以应对更复杂的模型<br>
+  ![GRN](https://github.com/dongyang-feng/C-Leetcode/blob/main/Gating%20mechanisms.png)<br>
   
-  ![GRN](https://github.com/dongyang-feng/C-Leetcode/blob/main/Gating%20mechanisms.png)
   * 
 
 
