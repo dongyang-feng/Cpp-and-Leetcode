@@ -52,10 +52,12 @@
 <div align="center">
 	<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169207021000637-gr2.jpg" width="60%">
 </div>
+
   * 门控机制（Gating mechanisms）： **GRN** 文章中使用最多的网络结构，可以让模型动态的跳过某些对预测结果无用的结构，让模型可以更复杂以应对更复杂的模型
 <div align="center">
 	<img src="https://github.com/dongyang-feng/C-Leetcode/blob/main/Gating%20mechanisms.png" width="60%">
 </div>
+
   * 
 
 
