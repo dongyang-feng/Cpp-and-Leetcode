@@ -1,5 +1,8 @@
 # __C++ - Leetcode__
-
+## Day 10-16
+完成了 **TFT** 模型的构建后续有两个任务：<br>
+* 数据在模型中流动的时候维度变化情况，这个一定要搞明白的
+* 使用的数据集用Pd模块处理，构建成需要的数据格式
 ## Day 10-11
 **学习[pytorch-forecasting](https://pytorch-forecasting.readthedocs.io/en/stable/getting-started.html)** <br>
 
